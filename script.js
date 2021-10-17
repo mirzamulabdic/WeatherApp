@@ -1,6 +1,9 @@
 let weather = {
+  //Pristup API-ju
   apiKey: "1e202aae6a13ee52bf2870578a62f0eb",
   fetchWeather: function (city) {
+    
+    //Dohvatanje podataka
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
         city +
@@ -16,6 +19,7 @@ let weather = {
       })
       .then((data) => this.displayWeather(data));
   },
+  //Ispis podataka na stranici
   displayWeather: function (data) {
     const { name } = data;
     const { icon, description } = data.weather[0];
@@ -37,6 +41,8 @@ let weather = {
     document.querySelector(".visibility").innerText =
       "Visibility: " + data.visibility / 1000 + " km";
   },
+  
+  //Pretraga gradova
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);
   },
