@@ -11,7 +11,7 @@ body {
 
 .bg-img {
   position: fixed;
-  background-image: url(/images/sunset.jpg);
+  background-image: url(./images/sunset.jpg);
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
